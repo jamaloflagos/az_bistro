@@ -1,38 +1,535 @@
-.App {
-  text-align: center;
+::-webkit-scrollbar {
+    width: 10px;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+::-webkit-scrollbar-thumb {
+    background: #beb9c3;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-track 
+{
+    background: #ece5e3;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-weight: lighter;
+    font-size: 1rem;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    font-family: 'Encode Sans Semi Condensed', sans-serif;
+    background: #ece5e3;
+    /* width: 100vw; */
+    overflow-x: hidden;
+    position: relative;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.header {
+    width: 100%;
+    height: 50px;
+    padding: 10px 10px 0 10px;
+    background: #beb9c3;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    
 }
 
-.App-link {
-  color: #61dafb;
+.wrap {
+    width: 80vw;
+    margin: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.menuBar {
+    /* background: yellow; */
+    width: fit-content;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background:#ece5e3;
+    row-gap: 20px;
+    text-align: start;
+    border: 1px solid #c72830;
+    border-radius: 5px;
+    width: fit-content;
+    padding: 20px;
+    position: fixed;
+    left: 50%;
+    z-index: 2;
+}
+nav a {
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+nav a:link {
+    color: #c72830;
+}
+
+nav a:visited{
+    color: #c72830;
+}
+
+nav a:hover {
+    color: #c72830;
+}
+nav a:active {
+    color: #c72830;
+}
+
+
+#home-container {
+    height: auto;
+    
+    /* background: green; */
+    margin-top: 100px;
+}
+
+
+.span {
+    display: block;
+    font-size: 1rem;
+    /* margin-top: 10px; */
+}
+
+.homeImg {
+    border-radius: 50%;
+    margin-left: 100px;
+}
+
+
+
+.col-1 {
+    width: 300px;
+}
+
+.boxes {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    margin: 30px auto 0 auto;
+
+}
+
+.box {
+    height: 100px;
+    width: 100px;
+    border: 1px solid #beb9c3;
+    transform: rotate(45deg);
+    position: absolute;
+}
+
+.images {
+    width: 100%;
+    height: 100%;
+}
+
+.box1 {
+    top: 27%;
+    left: 7%;
+}
+
+.box2 {
+    left: 33%;
+    top: 7%;
+}
+
+.box3 {
+    top: 27%;
+    right: 7%;
+    
+}
+
+.box4 {
+    bottom: 28%;
+    left: 33%;
+}
+
+.open {
+    /* font-weight: lighter; */
+    font-size: 0.8rem;
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    color: #c72830;
+}
+
+.choose {
+    margin-top: 30px;
+    height: auto;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.chooses {
+    border: 1px solid #beb9c3;
+    margin-top: 30px;
+    margin: 30px auto 0 auto;
+    text-align: center;
+    height: 300px;
+    width: 250px;
+    padding: 100px 20px 0 20px ;
+}
+
+.menus {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.category {
+    margin: 30px auto 30px auto;
+    font-weight: bold;
+    font-size: 1.5rem;
+    width: 150px;
+    border: 1px solid #c72830;
+    position: relative;
+}
+.category::before {
+    content: '';
+    height: 1px;
+    width: 30px;
+    background: #c72830;
+    position: absolute;
+    left: 0;
+    top: 50%;
+}
+
+.category::after {
+    content: '';
+    height: 1px;
+    width: 30px;
+    background: #c72830;
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+
+.starter {
+    text-align: center;
+    margin: 20px 0 0 0;
+}
+
+.foodImg {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 30px 0 0 0;
+}
+
+.foodName {
+    margin: 5px 0 0 10px;
+    text-align: start;
+    
+}
+
+.price-order {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 10px 5px 10px;
+}
+
+.order {
+    width: 80px;
+    padding: 3px;
+    border-radius: 5px;
+    border: 1px solid #c72830;
+    background: transparent;
+    transition: background 500ms linear 100ms, color 500ms linear 100ms;
+}
+
+.order:hover {
+    background: #c72830;
+    color: white;
+}
+
+.orderModal {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 25vh;
+}
+
+.orderInput {
+    width: 300px;
+    margin: auto;
+    height: 400px;
+    background: #ece5e3;
+    padding: 20px;
+}
+
+
+input[type='text'] {
+    display: block;
+    width: 250px;
+    height: 40px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    outline: none;
+    border: 1px solid #c72830;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 5px;
+}
+
+button[type='submit'] {
+    margin: auto;
+    display: block;
+    width: 100px;
+    border: 0;
+    border-radius: 5px;
+    padding: 5px;
+    background: #c72830;
+    color: white;
+}
+
+.readyTime {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    width: 150px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    background: #c72830;
+    color: white;
+}
+
+.foodBorder {
+    border: 1px solid #beb9c3;
+    position: relative;
+    width: 300px;
+    margin: 0 auto 10px auto;
+    padding: 0 0 5px 0;
+}
+
+
+
+.div {
+    border: 1px solid purple;
+}
+
+.timeDiv {
+    display: flex;
+    justify-content: space-between;
+}
+
+.readyTime {
+    font-size: 1rem;
+}
+
+.about {
+    text-align: justify;
+    margin-top: 30px;
+}
+
+.appDesc {
+    text-align: justify;
+    font-size: 1rem;
+}
+
+.testimonial {
+    margin-top: 30px;
+}
+
+.testimonialCol {
+    border: 1px solid #beb9c3;
+    text-align: start;
+    width: 250px;
+    margin: 10px auto 0 auto;
+    height: 200px;
+    padding: 30px 0 0 10px;
+}
+
+footer {
+    margin-top: 30px;
+    padding: 30px 20px 20px 20px;
+    background: #beb9c3;
+}
+
+textarea {
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+textarea:focus {
+    border: 1px solid #c72830;
+}
+
+.socials {
+    width: 25px;
+    height: 25px;
+    padding-top: 2.5px;
+    border-radius: 50%;
+    text-align: center;
+    color: #c72830;
+    transition: background 2s linear, color 1s linear;
+}
+
+.socials:hover {
+    background: #c72830;
+    color: white;
+}
+
+/* Smasung fold */
+@media only screen and (max-width: 280px) {
+    .foodImg {
+        width: 150px;
+        height: 150px;
+        margin-left: 0;
+    }
+    .foodBorder, .chooses, .testimonialCol {
+        width: 200px;
+        margin: auto;
+    }
+
+    textarea {
+        width: 200px;
+    }
+
+    .col-1 {
+        width: auto;
+    }
+
+    .boxes {
+        width: 200px;
+        margin: 0 auto 0 auto;
+    }
+
+    
+
+    .box {
+        width: 70px;
+        height: 70px;
+    }
+
+    .images {
+        width: 100%;
+        height: 100%;
+    }
+
+    .box2 {
+        top: 14%;
+    }
+
+    .box3 {
+        right: 6%;
+    }
+
+    .box4 {
+        bottom: 43%;
+    }    
+}
+
+/* Landscape tablets */
+@media only screen and (min-width: 768px) {
+    .chooses {
+        width: 90%;
+        text-align: start;
+        height: 200px;
+        padding: 50px 30px 0 20px;
+    }
+    .testimonialCol {
+        width: 90%;
+        text-align: start;
+        height: 200px;
+        padding: 50px 30px 0 20px;
+    }
+
+    .foodGrid {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: flex-start;
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    .boxes {
+        margin: 0;
+    }
+
+    nav {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row;
+        column-gap: 50px;
+        width: auto;
+        padding: 10px;
+        z-index: 1;
+        left: 45%;
+        width: fit-content;
+        border: 1px solid #c72830;
+    }
+
+    nav a:link {
+        color: #c72830;
+    }
+    
+    nav a:visited{
+        color: #c72830;
+    }
+    
+    nav a:hover {
+        color: #c72830;
+    }
+    nav a:active {
+        color: #c72830;
+    }
+}
+/* laptop/ desktop */
+@media only screen and (min-width: 992px) {
+    .chooseRow, .testimonialRow {
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+    .chooses {
+        border: 1px solid red;
+        margin-top: 30px;
+        margin: 30px auto 0 auto;
+        text-align: center;
+        height: 300px;
+        width: 250px;
+        padding: 100px 20px 0 20px;
+    }
+
+    .testimonialCol {
+        border: 1px solid red;
+        margin-top: 30px;
+        margin: 30px auto 0 auto;
+        text-align: start;
+        width: 250px;
+        padding: 10px 0 0 10px;
+    }
+    .foodGrid {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        justify-content: flex-start;
+    }
+   
+}
+/* large laptop/ desktop */
+@media only screen and (min-width: 1200px) {
+    .chooses,.testimonialCol {
+        width: 320px;
+    }
+    
 }
